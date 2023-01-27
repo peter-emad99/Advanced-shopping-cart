@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { useShoppingCartContext } from '../Context/StoreContext';
+import Counter from './Counter';
 
 function TheNavBar() {
 	let { cartItems, cartQuantity, openCart, isOpen } = useShoppingCartContext();
@@ -19,7 +20,8 @@ function TheNavBar() {
 					<Nav.Link to={'/about'} as={NavLink}>
 						About
 					</Nav.Link>
-				</Nav>
+				</Nav>{' '}
+				<Counter />
 				<Button
 					onClick={() => {
 						openCart();
